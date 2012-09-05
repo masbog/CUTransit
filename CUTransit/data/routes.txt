@@ -1,0 +1,65 @@
+1	Yellow	1	1x
+2	Red	2	2x
+3	Lavender	3	3x
+4	Blue	4	4x
+5	Green	5	5x
+5	Green Express	5e	5ex
+6	Orange	6	6x
+7	Grey	7	7x
+8	Bronze	8	8x
+9A	Brown	9a	9ax
+9B	Brown	9b	9bx
+10	Gold	10	10x
+12	Teal	12	12x
+12	Teal Limited	12l	12lx
+13	Silver	13	13x
+14	Navy	14	14x
+22	Illini	22	22x
+22	Illini Limited	22l	22lx
+27	Air Bus	27	27x
+331	Northeast Direct	331	331x
+334	West Direct	334	334x
+-
+50	Green	50	50x
+50	Green Late Night	50	50lx
+60	Orange	60	60x
+70	Grey	70	70x
+100	Yellow	100	100x
+120	Teal	120	120x
+130	Silver	130	130x
+180	Lime	180	180x
+220	Illini	220	220x
+220	Illini Limited	220l	220lx
+331	Northeast Direct Evening	331	331x
+335	SafeRides	335	335x
+-
+20	Red	20	20x
+30	Lavender	30	30x
+50	Green	50	50x
+50	Green Evening	50e	50ex
+60	Orange	60	60x
+70	Grey	70	70x
+100	Yellow	100	100x
+120	Teal	120	120x
+130	Silver	130	130x
+130	Silver Limited	130l	130lx
+180	Lime	180	180x
+190	Plum	190	190x
+220	Illini	220	220x
+270	Air Bus	270	270x
+280	tranSPORT	280	280x
+331	Northeast Direct	331	331x
+335	SafeRides	335	335x
+-
+50	Green	50	50x
+50	Green Evening	50	50ex
+60	Orange	60	60x
+70	Grey	70	70x
+100	Yellow	100	100x
+120	Teal	120	120x
+130	Silver	130	130x
+180	Lime	180	180x
+220	Illini	220	220x
+270	Air Bus	270	270x
+331	Northeast Direct	331	331x
+335	SafeRides	335	335x

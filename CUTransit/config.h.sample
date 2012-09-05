@@ -1,0 +1,10 @@
+// Your API key for getting bus data from CUMTD website.
+#define CUMTD_APIKEY @"abcdef123456"
+
+// Your API key for using Google's geocoding API.
+// If you don't define this, it will fall back to Apple's geocoder.
+#define GOOGLEMAP_APIKEY @"abcdef123456"
+
+// Use auto completion from CUMTD when looking up a bus stop name.
+// Using this may cause some latency, but data will be up-to-date.
+#define USE_ONLINE_STOP_AUTOCOMPLETE 0
