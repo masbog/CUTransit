@@ -86,13 +86,13 @@
 @implementation DepartureCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        departureView = [[DepartureView alloc] initWithFrame:self.contentView.bounds];
+	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+	if (self) {
+		departureView = [[DepartureView alloc] initWithFrame:self.contentView.bounds];
 		departureView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		[self.contentView addSubview:departureView];
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)setDeparture:(CUDeparture *)newDeparture {

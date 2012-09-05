@@ -14,17 +14,17 @@
 @synthesize tableView, routes, routeGroups;
 
 static UIImage* imageWithColor(UIColor *color) {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 43.0f, 43.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
+	CGRect rect = CGRectMake(0.0f, 0.0f, 43.0f, 43.0f);
+	UIGraphicsBeginImageContext(rect.size);
+	CGContextRef context = UIGraphicsGetCurrentContext();
 	
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
+	CGContextSetFillColorWithColor(context, [color CGColor]);
+	CGContextFillRect(context, rect);
 	
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
 	
-    return image;
+	return image;
 }
 
 - (id)init {

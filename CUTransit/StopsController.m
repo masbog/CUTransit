@@ -21,8 +21,8 @@
 @synthesize mapView, searchResults;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {
 		self.title = @"Stops";
 
 		mapView2 = [[MKMapView alloc] initWithFrame:CGRectZero];
@@ -32,8 +32,8 @@
 		region = defaultRegion();
 		
 		[self updateVisibleAnnotations];
-    }
-    return self;
+	}
+	return self;
 }
 
 - (id<MKAnnotation>)annotationInGrid:(MKMapRect)gridMapRect usingAnnotations:(NSSet*)annotations {
@@ -154,14 +154,14 @@
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
 	[self addTrackingButton];
 	
 	[mapView setRegion:region animated:NO];
 }
 
 - (void)viewWillUnload {
-    [super viewWillUnload];
+	[super viewWillUnload];
 	region = mapView.region;
 }
 

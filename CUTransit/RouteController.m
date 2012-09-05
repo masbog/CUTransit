@@ -26,7 +26,7 @@
 	NSArray *items = [NSArray arrayWithObjects:@"Map", @"Schedule", nil];
 	
 	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:items];
-	segmentedControl.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
+	segmentedControl.frame = CGRectMake(0, 0, self.view.frame.size.width, 44.0f);
 	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	segmentedControl.segmentedControlStyle = 7; // undocumented style
 	segmentedControl.selectedSegmentIndex = 0;
@@ -34,17 +34,15 @@
 	[self.view addSubview:segmentedControl];
 	[segmentedControl release];
 	
-	if (mapWebView == nil) {
-		self.mapWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 44.0f, self.view.frame.size.width, self.view.frame.size.height - 44.0f)];
-		mapWebView.scalesPageToFit = YES;
-		mapWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-		[self.view addSubview:mapWebView];
-		[mapWebView release];
-		
-		NSURL *url = [[NSBundle mainBundle] URLForResource:route.map withExtension:@"pdf"];
-		NSURLRequest *request = [NSURLRequest requestWithURL:url];
-		[mapWebView loadRequest:request];
-	}
+	self.mapWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 44.0f, self.view.frame.size.width, self.view.frame.size.height - 44.0f)];
+	mapWebView.scalesPageToFit = YES;
+	mapWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+	[self.view addSubview:mapWebView];
+	[mapWebView release];
+	
+	NSURL *url = [[NSBundle mainBundle] URLForResource:route.map withExtension:@"pdf"];
+	NSURLRequest *request = [NSURLRequest requestWithURL:url];
+	[mapWebView loadRequest:request];
 }
 
 - (void)segmentAction:(id)sender {

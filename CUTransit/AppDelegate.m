@@ -21,11 +21,11 @@
 - (void)dealloc {
 	[_window release];
 	[_tabBarController release];
-    [super dealloc];
+	[super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+	self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 
 	// Stops tab
 	UIViewController *stopsController = [[[StopsController alloc] initWithNibName:@"StopsController" bundle:nil] autorelease];
@@ -51,9 +51,9 @@
 	self.tabBarController.viewControllers = [NSArray arrayWithObjects:stopsNav, plannerNav, bookmarksNav, routesNav, nil];
 	
 	self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible];
+	[self.window makeKeyAndVisible];
 	
-    return YES;
+	return YES;
 }
 
 - (void)showDirectionsWithStop:(CUStop*)stop isOrigin:(BOOL)isOrigin {

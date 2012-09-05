@@ -13,19 +13,18 @@
 #import "StepCell.h"
 #import "LocationTextField.h"
 
-#define TITLE @"Trip Planner"
 #define CURRENT_LOCATION_COLOR [UIColor colorWithRed:41/255.0f green:87/255.0f blue:1.0f alpha:1.0f]
 
 
 @implementation PlannerController
 
-@synthesize startTextField, endTextField, resultsTableView, swapButton, searchCancelView, routeButton,  itinerariesTableView, loadingView, spinView;
+@synthesize startTextField, endTextField, resultsTableView, swapButton, searchCancelView, routeButton, itinerariesTableView, loadingView, spinView;
 @synthesize searchResults, originLocation, destinationLocation, itineraries;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-		self.title = TITLE;
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {
+		self.title = @"Trip Planner";
 		
 		self.originLocation = [[[Location alloc] init] autorelease];
 		self.destinationLocation = [[[Location alloc] init] autorelease];
@@ -35,8 +34,8 @@
 		
 		destinationLocation.type = LocationTypeText;
 		destinationLocation.text = @"";
-    }
-    return self;
+	}
+	return self;
 }
 
 #pragma mark - Other
@@ -108,9 +107,8 @@
 					 [itinerariesTableView reloadData];
 					 [self hideLoading];
 					 routeButton.enabled = YES;
-					 if ([itineraries count] == 0) {
+					 if ([itineraries count] == 0)
 						 handleCommonError(error);
-					 }
 				 });
 			 } else {
 				 dispatch_async(dispatch_get_main_queue(), ^{
@@ -148,9 +146,8 @@
 					 [itinerariesTableView reloadData];
 					 [self hideLoading];
 					 routeButton.enabled = YES;
-					 if ([itineraries count] == 0) {
+					 if ([itineraries count] == 0)
 						 handleCommonError(error);
-					 }
 				 });
 			 } else {
 				 dispatch_async(dispatch_get_main_queue(), ^{
@@ -179,8 +176,6 @@
 			[destinationLocation resolveWithHandler:^(BOOL success, NSError *error) {
 				if (success) {
 					dispatch_async(dispatch_get_main_queue(), ^{
-						//startTextField.text = originLocation.text;
-						//endTextField.text = destinationLocation.text;
 						startTextField.location = originLocation;
 						endTextField.location = destinationLocation;
 					});
@@ -238,7 +233,6 @@
 	[self presentModalViewController:nav animated:YES];
 	[nav release];
 	[controller release];
-
 }
 
 - (void)showDirectionsWithStop:(CUStop*)stop isOrigin:(BOOL)isOrigin {
@@ -274,7 +268,7 @@
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
 
 	// Text fields
 	startTextField.label.text = @"Start: ";
@@ -305,13 +299,13 @@
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
+	[super viewDidUnload];
 	self.routeButton = nil;
 	self.swapButton = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+	[super viewWillAppear:animated];
 	[itinerariesTableView deselectRowAtIndexPath:itinerariesTableView.indexPathForSelectedRow animated:YES];
 }
 
@@ -621,7 +615,7 @@
 #pragma mark -
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		return YES;
 	return interfaceOrientation == UIInterfaceOrientationPortrait;
 }

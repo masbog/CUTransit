@@ -12,12 +12,12 @@
 @synthesize text, text2, text2s;
 
 - (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
+	self = [super initWithFrame:frame];
+	if (self) {
 		self.backgroundColor = [UIColor clearColor];
 		self.contentMode = UIViewContentModeRedraw;
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)drawRect:(CGRect)rect {

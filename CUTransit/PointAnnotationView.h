@@ -8,7 +8,7 @@
 #import <MapKit/MapKit.h>
 #import "CUConnection.h"
 
-// View for displaying CUPoint on a map
+// A view for displaying CUPoint
 @interface PointAnnotationView : MKAnnotationView
 
 @end

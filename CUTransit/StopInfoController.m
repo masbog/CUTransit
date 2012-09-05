@@ -55,12 +55,12 @@
 @synthesize stop;
 
 - (id)initWithStop:(CUStop*)s {
-    self = [super initWithStyle:UITableViewStyleGrouped];
-    if (self) {
+	self = [super initWithStyle:UITableViewStyleGrouped];
+	if (self) {
 		self.title = @"Info";
 		self.stop = s;
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)updateBookmarkButton {
@@ -104,7 +104,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+	return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -112,20 +112,20 @@
 		return 1;
 	if (section == 1)
 		return 2;
-    return 0;
+	return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+	static NSString *CellIdentifier = @"Cell";
+	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 		cell.textLabel.textAlignment = UITextAlignmentCenter;
 		cell.textLabel.font = [UIFont boldSystemFontOfSize:13.0f];
 		cell.textLabel.textColor = TITLE_COLOR;
-    }
-    
+	}
+	
 	NSUInteger row = indexPath.row;
 	
 	if (indexPath.section == 0) {
@@ -137,8 +137,8 @@
 		else if (row == 1)
 			cell.textLabel.text = @"Directions From Here";
 	}
-    
-    return cell;
+	
+	return cell;
 }
 
 #pragma mark - Table view delegate

@@ -11,21 +11,21 @@
 @implementation LegAnnotationView
 
 - (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
-    if (self != nil) {
-        CGRect frame = self.frame;
-        frame.size = CGSizeMake(35.0f, 32.0f);
-        self.frame = frame;
+	self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+	if (self != nil) {
+		CGRect frame = self.frame;
+		frame.size = CGSizeMake(35.0f, 32.0f);
+		self.frame = frame;
 		self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"callout_left"]];
-        self.centerOffset = CGPointMake(-35.0/2, -32.0/2);
+		self.centerOffset = CGPointMake(-35.0/2, -32.0/2);
 		self.calloutOffset = CGPointMake(-6.0f, 0.0f);
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)setAnnotation:(id <MKAnnotation>)annotation {
-    [super setAnnotation:annotation];
-    [self setNeedsDisplay];
+	[super setAnnotation:annotation];
+	[self setNeedsDisplay];
 }
 
 - (void)drawRect:(CGRect)rect {

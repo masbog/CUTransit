@@ -487,7 +487,7 @@ typedef struct StepCoordinates {
 #pragma mark -
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+	return YES;
 }
 
 - (void)dealloc {

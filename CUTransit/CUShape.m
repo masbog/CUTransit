@@ -78,7 +78,7 @@
 }
 
 - (CLLocationCoordinate2D)coordinate {
-    return CLLocationCoordinate2DMake(0, 0);                                      
+	return CLLocationCoordinate2DMake(0, 0);
 }
 
 - (void)dealloc {

@@ -44,11 +44,11 @@
 @implementation DepartureAnnotationView
 
 - (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
-    if (self != nil) {
-        CGRect frame = self.frame;
+	self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+	if (self != nil) {
+		CGRect frame = self.frame;
 		frame.size = CGSizeMake(21.0f, 23.0f);
-        self.frame = frame;
+		self.frame = frame;
 		self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bus_dot"]];
 		self.calloutOffset = CGPointMake(0.0f, 4.0f);
 		
@@ -57,8 +57,8 @@
 		halo.center = CGPointMake(21.0f/2, 23.0f/2);
 		halo.alpha = 0;
 		[self addSubview:halo];
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)dealloc {

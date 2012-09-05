@@ -14,13 +14,13 @@
 @synthesize text, text2, stopButton, showsStopButton, delegate;
 
 - (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
+	self = [super initWithFrame:frame];
+	if (self) {
 		// we draw background color instead because the view can appear as if it's resized.
 		self.backgroundColor = [UIColor clearColor];
 		self.contentMode = UIViewContentModeRedraw;
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)drawRect:(CGRect)rect {

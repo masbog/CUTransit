@@ -181,14 +181,14 @@
 @synthesize stepView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
+	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+	if (self) {
 		self.stepView = [[StepView alloc] initWithFrame:self.contentView.bounds];
 		stepView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		[self.contentView addSubview:stepView];
 		[stepView release];
-    }
-    return self;
+	}
+	return self;
 }
 
 + (CGFloat)heightForText:(NSString*)text {

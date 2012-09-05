@@ -20,7 +20,7 @@ To run CU Transit on an iOS simulator:
 1. Install Xcode 4.3 or newer.
 2. Get an API Key from http://developer.cumtd.com/
 3. (Optional, but recommended) Go to https://code.google.com/apis/console and request a key for Places API.
-4. Rename `config.sample.h` to `config.h`. Configure the file. Then add it to the Xcode project.
+4. Rename `config.sample.h` to `config.h`. Then configure the file.
 5. Run the application.
 
 ## Overview

@@ -15,27 +15,27 @@
 @synthesize stops;
 
 - (id)init {
-    self = [super initWithStyle:UITableViewStylePlain];
-    if (self) {
+	self = [super initWithStyle:UITableViewStylePlain];
+	if (self) {
 		self.title = @"Bookmarks";
 		self.tabBarItem = [[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:0] autorelease];
-    }
-    return self;
+	}
+	return self;
 }
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
 
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
 	self.stops = [BookmarkDatabase stops];
 	bookmarkRevision = [BookmarkDatabase revision];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+	[super viewWillAppear:animated];
 	if (bookmarkRevision != [BookmarkDatabase revision]) {
 		self.stops = [BookmarkDatabase stops];
 		bookmarkRevision = [BookmarkDatabase revision];
@@ -46,38 +46,37 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+	return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [stops count];
+	return [stops count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+	static NSString *CellIdentifier = @"Cell";
+	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    
-    CUStop *stop = [stops objectAtIndex:indexPath.row];
+	}
+	
+	CUStop *stop = [stops objectAtIndex:indexPath.row];
 	cell.textLabel.text = stop.stopName;
-    
-    return cell;
+	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+	if (editingStyle == UITableViewCellEditingStyleDelete) {
 		CUStop *stop = [stops objectAtIndex:indexPath.row];
 		[BookmarkDatabase removeStop:stop];
 		bookmarkRevision = [BookmarkDatabase revision];
 		
 		[stops removeObjectAtIndex:indexPath.row];
 		
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-    } 
+		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+	} 
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
@@ -104,7 +103,7 @@
 #pragma mark -
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		return YES;
 	return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
