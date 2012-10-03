@@ -10,6 +10,7 @@
 9A	Brown	9a	9ax
 9B	Brown	9b	9bx
 10	Gold	10	10x
+11	Ruby	11	11x
 12	Teal	12	12x
 12	Teal Limited	12l	12lx
 13	Silver	13	13x
@@ -17,7 +18,6 @@
 22	Illini	22	22x
 22	Illini Limited	22l	22lx
 27	Air Bus	27	27x
-331	Northeast Direct	331	331x
 334	West Direct	334	334x
 -
 50	Green	50	50x
@@ -25,12 +25,12 @@
 60	Orange	60	60x
 70	Grey	70	70x
 100	Yellow	100	100x
+110	Ruby	110	110x
 120	Teal	120	120x
 130	Silver	130	130x
 180	Lime	180	180x
 220	Illini	220	220x
 220	Illini Limited	220l	220lx
-331	Northeast Direct Evening	331	331x
 335	SafeRides	335	335x
 -
 20	Red	20	20x
@@ -40,6 +40,7 @@
 60	Orange	60	60x
 70	Grey	70	70x
 100	Yellow	100	100x
+110	Ruby	110	110x
 120	Teal	120	120x
 130	Silver	130	130x
 130	Silver Limited	130l	130lx
@@ -48,7 +49,6 @@
 220	Illini	220	220x
 270	Air Bus	270	270x
 280	tranSPORT	280	280x
-331	Northeast Direct	331	331x
 335	SafeRides	335	335x
 -
 50	Green	50	50x
@@ -56,10 +56,10 @@
 60	Orange	60	60x
 70	Grey	70	70x
 100	Yellow	100	100x
+110	Ruby	110	110x
 120	Teal	120	120x
 130	Silver	130	130x
 180	Lime	180	180x
 220	Illini	220	220x
 270	Air Bus	270	270x
-331	Northeast Direct	331	331x
 335	SafeRides	335	335x
