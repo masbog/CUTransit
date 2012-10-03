@@ -41,6 +41,7 @@
 - (IBAction)cancelSearch:(id)sender;
 - (IBAction)searchStringChanged:(id)sender;
 - (void)showDirectionsWithStop:(CUStop*)stop isOrigin:(BOOL)isOrigin;
+- (void)showDirectionsWithDirectionRequests:(MKDirectionsRequest*)request;
 
 @property (nonatomic, retain) LocationTextField *startTextField;
 @property (nonatomic, retain) LocationTextField *endTextField;

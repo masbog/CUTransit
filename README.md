@@ -17,7 +17,7 @@ Website: http://jitouch.com/cutransit
 
 To run CU Transit on an iOS simulator:
 
-1. Install Xcode 4.3 or newer.
+1. Install Xcode 4.5 or newer.
 2. Get an API Key from http://developer.cumtd.com/
 3. (Optional, but recommended) Go to https://code.google.com/apis/console and request a key for Places API.
 4. Rename `config.sample.h` to `config.h`. Then configure the file.
@@ -27,17 +27,16 @@ To run CU Transit on an iOS simulator:
 
 The application consists of four tabs: Stops, Trip Planner, Bookmarks, and Routes. The following are their class names and what they typically contain in their navigation stacks.
 
-1. `StopsController` > `StopInfoController` > `StopController` > `DepartureController`
+1. `StopsController` > `StopController` > `DepartureController`
 2. `PlannerController` > `ItineraryController`
 3. `BookmarksController` > `StopController`
 4. `RoutesController` > `RouteController`
 
-In the first tab, a typical workflow is that the user finds a stop on the map, taps the stop to go to the information page (`StopInfoController`), and then selects "Departures" to see incoming buses (`StopController`). The user can then tap a bus's name to see its current location on a map (`DepartureController`).
+In the first tab, a typical workflow is that the user finds a bus stop on the map, taps the bus stop to go to the information page (`StopController`), and then selects the "Departures" tab to see incoming buses. The user can then tap a bus's name to see its current location on a map (`DepartureController`).
 
-## To-dos
+## To-do
 
-1. Combine `StopInfoController` and `StopController` into one page. Currently, the only way to get to the `StopInfoController` page is to find a stop on a map in the first tab and tap the details button. We cannot get to the `StopInfoController` page from the bookmarks tab.
-2. Update the routes database. The routes information is extracted manually from CUMTD's [maps & schedules book PDF](http://www.cumtd.com/content/pdfs/MTD_MnS_Book_Complete.pdf). The current data in the app are out of date. It would be much better if we could automate the process.
+* Update the routes database. The routes information is extracted manually from CUMTD's [maps & schedules book PDF](http://www.cumtd.com/content/pdfs/MTD_MnS_Book_Complete.pdf). The current data in the app are out of date. It would be much better if we could automate the process.
 
 ## License
 

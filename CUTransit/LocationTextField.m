@@ -12,7 +12,7 @@
 
 @implementation LocationTextField
 
-@synthesize label, bookmarkButton;
+@synthesize label, bookmarkButton, location;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	if (self = [super initWithCoder:aDecoder]) {

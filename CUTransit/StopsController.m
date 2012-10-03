@@ -11,7 +11,6 @@
 #import "ShapeView.h"
 #import "TitleView.h"
 #import "LocationController.h"
-#import "StopInfoController.h"
 #import "Location.h"
 #import "StopDatabase.h"
 
@@ -146,7 +145,7 @@
 #pragma mark - user interface
 
 - (void)addTrackingButton {
-	UIBarButtonItem *bi = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"tracking.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(moveToCurrentLocation:)];
+	UIBarButtonItem *bi = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"tracking"] style:UIBarButtonItemStyleBordered target:self action:@selector(moveToCurrentLocation:)];
 	self.navigationItem.leftBarButtonItem = bi;
 	[bi release];
 }
@@ -180,7 +179,7 @@
 	MKPinAnnotationView *pinView = (MKPinAnnotationView*)[[sender superview] superview];
 	CUStop *stop = pinView.annotation;
 	
-	StopInfoController *controller = [[StopInfoController alloc] initWithStop:stop];
+	StopController *controller = [[StopController alloc] initWithStop:stop];
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
 }

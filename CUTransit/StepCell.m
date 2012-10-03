@@ -100,7 +100,7 @@
 }
 
 + (CGFloat)heightForText:(NSString*)text {
-	CGFloat w = 320.0f; //TODO: remove hard coding
+	CGFloat w = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 768.0f : 320.0f; //TODO: remove hard coding
 	
 	CGRect bounds = CGRectMake(0, 0, w-20.0-30, 1000);
 	CGPathRef path = CGPathCreateWithRect(bounds, NULL);

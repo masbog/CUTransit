@@ -7,12 +7,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class CUStop, PlannerController;
+@class CUStop, StopsController, PlannerController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
+	StopsController *stopsController;
 	PlannerController *plannerController;
 }
 
+- (void)showStop:(CUStop*)stop;
 - (void)showDirectionsWithStop:(CUStop*)stop isOrigin:(BOOL)isOrigin;
 
 @property (strong, nonatomic) UIWindow *window;

@@ -15,7 +15,7 @@
 @interface TitleView : UIView {
 	NSString *text;
 	NSString *text2;
-	NSMutableArray *text2s;
+	NSArray *text2s;
 	int mode;
 }
 
@@ -23,6 +23,6 @@
 
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) NSString *text2;
-@property (nonatomic, retain) NSMutableArray *text2s;
+@property (nonatomic, retain) NSArray *text2s;
 
 @end

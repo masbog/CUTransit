@@ -21,6 +21,8 @@
 	BOOL showCallout;
 }
 
+- (void)showStop:(CUStop*)stop;
+
 @property (nonatomic, retain) MKMapView *mapView;
 @property (nonatomic, retain) NSArray *searchResults;
 

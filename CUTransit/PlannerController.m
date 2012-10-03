@@ -265,6 +265,37 @@
 	swapButton.enabled = [startTextField.text length] > 0 || [endTextField.text length] > 0;
 }
 
+- (void)showDirectionsWithDirectionRequests:(MKDirectionsRequest*)request {
+	[self view];
+	
+	[self processMapItem:request.source forLocation:originLocation];
+	[self processMapItem:request.destination forLocation:destinationLocation];
+	
+	disableSearchStringChanged = YES;
+	startTextField.location = originLocation;
+	endTextField.location = destinationLocation;
+	disableSearchStringChanged = NO;
+	
+	swapButton.enabled = YES;
+	
+	[self routeAction:nil];
+}
+
+- (void)processMapItem:(MKMapItem*)item forLocation:(Location*)location {
+	if (item.isCurrentLocation) {
+		location.type = LocationTypeCurrentLocation;
+		location.text = @"Current Location";
+	} else {
+		location.type = LocationTypeCoordinate;
+		location.coordinate = item.placemark.coordinate;
+		if (item.name) {
+			location.text = item.name;
+		} else {
+			location.text = [NSString stringWithFormat:@"%lf, %lf", location.coordinate.latitude, location.coordinate.longitude];
+		}
+	}
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {

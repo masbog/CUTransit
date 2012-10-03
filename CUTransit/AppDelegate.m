@@ -28,7 +28,7 @@
 	self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 
 	// Stops tab
-	UIViewController *stopsController = [[[StopsController alloc] initWithNibName:@"StopsController" bundle:nil] autorelease];
+	stopsController = [[[StopsController alloc] initWithNibName:@"StopsController" bundle:nil] autorelease];
 	UINavigationController *stopsNav = [[[UINavigationController alloc] initWithRootViewController:stopsController] autorelease];
 	stopsNav.tabBarItem.image = [UIImage imageNamed:@"clock"];
 	
@@ -56,8 +56,29 @@
 	return YES;
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+	if ([MKDirectionsRequest isDirectionsRequestURL:url]) {
+		MKDirectionsRequest* directionsRequest = [[MKDirectionsRequest alloc] initWithContentsOfURL:url];
+
+		[plannerController showDirectionsWithDirectionRequests:directionsRequest];
+		[[plannerController navigationController] popToRootViewControllerAnimated:NO];
+		self.tabBarController.selectedIndex = 1;
+
+		[directionsRequest release];
+		return YES;
+	}
+	return NO;
+}
+
+- (void)showStop:(CUStop*)stop {
+	[stopsController showStop:stop];
+	[[stopsController navigationController] popToRootViewControllerAnimated:YES];
+	self.tabBarController.selectedIndex = 0;
+}
+
 - (void)showDirectionsWithStop:(CUStop*)stop isOrigin:(BOOL)isOrigin {
 	[plannerController showDirectionsWithStop:stop isOrigin:isOrigin];
+	[[plannerController navigationController] popToRootViewControllerAnimated:NO];
 	self.tabBarController.selectedIndex = 1;
 }
 

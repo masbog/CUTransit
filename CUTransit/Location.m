@@ -49,7 +49,7 @@
 					 
 					 handler(YES, nil);
 				 } else if ([status isEqualToString:@"ZERO_RESULTS"]) {
-					 NSError *error = errorWithDescription(0, @"Try using more specific address.");
+					 NSError *error = errorWithDescription(0, @"Try using more specific address. You can also pinpoint it on a map.");
 					 handler(NO, error);
 				 } else {
 					 NSError *error = errorWithDescription(0, status);

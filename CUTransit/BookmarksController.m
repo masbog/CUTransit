@@ -96,6 +96,7 @@
 	CUStop *stop = [stops objectAtIndex:indexPath.row];
 	
 	StopController *controller = [[StopController alloc] initWithStop:stop];
+	controller.showsDepartureFirst = YES;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
 }
