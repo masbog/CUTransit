@@ -229,7 +229,7 @@
 - (void)refresh {
 	if (isLoading)
 		return;
-	
+
 	titleView.text2 = @"Loading...";
 	refreshButton.enabled = NO;
 	isLoading = YES;
@@ -240,24 +240,25 @@
 		 if (data) {
 			 dispatch_async(dispatch_get_main_queue(), ^{
 				 self.departures = data;
-				 
 				 [titleView setUpdated];
 				 refreshButton.enabled = YES;
 				 isLoading = NO;
-				 
 				 [self.departureTableView reloadData];
+                 
 			 });
 		 } else {
 			 dispatch_async(dispatch_get_main_queue(), ^{
 				 if (self.isViewLoaded && self.view.window) // show error only if the view is visible
 					 handleCommonError(error);
-				 [titleView setUpdated];
+                 
+                 titleView.text2 = @"Update Failed";
 				 refreshButton.enabled = YES;
 				 isLoading = NO;
 			 });
 		 }
 	 }
 	 ];
+    
 }
 
 - (void)refreshAction:(id)sender {
